@@ -41,29 +41,39 @@ $(document).ready(function () {
 
 
 
-     $(document).ready(function() {
-        // Form submit olayı
-        $("#contact-form").submit(function(event) {
-           event.preventDefault();  // Sayfa yenilemesini engelle
-  
-           // EmailJS'i başlat
-           emailjs.init("kxA5Q5o59j0KMMQ0L");  // Public key
-  
-           // emailjs.sendForm kullanarak formu gönder
-           emailjs.sendForm('service_djqcf4o', 'template_4kjt9d3', '#contact-form')
-              .then(function(response) {
-                 console.log('SUCCESS!', response.status, response.text);
-                 // Formu sıfırla
-                 document.getElementById("contact-form").reset();
-                 // Kullanıcıya başarı mesajı göster
-                 alert("Form Submitted Successfully");
-              }, function(error) {
-                 console.log('FAILED...', error);
-                 // Hata durumunda mesaj göster
-                 alert("Form Submission Failed! Try Again");
-              });
+    $(document).ready(function () {
+        $("#contact-form").submit(function (event) {
+            event.preventDefault(); // Səhifənin yenilənməsini qarşısını alın
+    
+            // EmailJS-i başlat
+            emailjs.init("kxA5Q5o59j0KMMQ0L");
+    
+            emailjs
+                .sendForm("service_djqcf4o", "template_4kjt9d3", "#contact-form")
+                .then(
+                    function (response) {
+                        console.log("SUCCESS!", response.status, response.text);
+    
+                        // Formu sıfırla
+                        document.getElementById("contact-form").reset();
+    
+                        // Modalı göstər
+                        const modal = document.getElementById("success-modal");
+                        modal.style.display = "flex";
+    
+                        // 3 saniyə sonra modalı gizlət
+                        setTimeout(() => {
+                            modal.style.display = "none";
+                        }, 3000);
+                    },
+                    function (error) {
+                        console.log("FAILED...", error);
+                        alert("Form Submission Failed! Try Again");
+                    }
+                );
         });
-     });
+    });
+    
 
 
 
