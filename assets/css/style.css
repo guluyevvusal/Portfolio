@@ -771,7 +771,7 @@ header .navbar ul li a:hover {
 
   .certifications .box-container .box .image {
     width: 100%;
-    height: 20rem; /* Daha küçük resim boyutu */
+    height: 20rem; /* Smaller image height */
   }
 
   .certifications .box-container .box img {
@@ -802,7 +802,7 @@ header .navbar ul li a:hover {
     margin: 0.5rem 0;
   }
 
-  /* Download butonunu mobilde ortalayacağız */
+  /* Download button'ı mobilde ortalayacağız */
   .downloadbtn {
     position: relative;
     margin-top: 1rem;
