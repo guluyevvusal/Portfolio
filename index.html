@@ -182,6 +182,17 @@
                     <h3>Success in the information Technology Field</h3>
                     <p>Issued by CodeKloud Academy</p>
                     <h4>October 2024</h4>
+
+                     <!-- Download Button -->
+                <div class="downloadbtn">
+                  <a href="./assets\pdf\cert-a.pdf" target="_blank" class="btn"><span>Download</span>
+                      <i class="fas fa-chevron-right"></i>
+                  </a>
+              </div>
+              <!-- Loading Message -->
+              <div id="loading-message" class="loading-message" style="display:none;">
+                <span class="dots">⏳</span> <span class="message">Yükleniyor...</span>
+              </div>
                 </div>
             </div>
 
@@ -194,6 +205,15 @@
                     <h3>Lean IT Certification</h3>
                     <p>Issued by Cl Academy</p>
                     <h4>September 2024</h4>
+                     <!-- Download Button -->
+                <div class="downloadbtn">
+                  <a href="./assets\pdf\cert-b.pdf" target="_blank" class="btn"><span>Download</span>
+                      <i class="fas fa-chevron-right"></i>
+                  </a>
+              </div>
+              <div id="loading-message" class="loading-message" style="display:none;">
+                <span class="dots">⏳</span> <span class="message">Yükleniyor...</span>
+              </div>
                 </div>
             </div>
 
@@ -229,18 +249,20 @@
     <!-- Example: Footer, Additional Content -->
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const boxes = document.querySelectorAll('.box');
-            let delay = 0;
-
-            boxes.forEach((box) => {
-                setTimeout(() => {
-                    box.style.opacity = "1";
-                    box.style.transform = "translateY(0)";
-                }, delay);
-                delay += 300; // Stagger the animation delay for each box
-            });
+      document.addEventListener("DOMContentLoaded", () => {
+        const boxes = document.querySelectorAll('.box');
+        let delay = 0;
+    
+        boxes.forEach((box) => {
+            setTimeout(() => {
+                box.style.opacity = "1";
+                box.style.transform = "translateY(0)";
+                box.style.transition = "all 0.5s ease-out"; // Animasyon süresi ve easing
+            }, delay);
+            delay += 300; // Her bir kutu için 300ms'lik gecikme ekle
         });
+    });
+    
     </script>
 
 

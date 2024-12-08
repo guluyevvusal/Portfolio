@@ -647,6 +647,7 @@ header .navbar ul li a:hover {
 .certifications {
   background: #e5ecfb;
   min-height: 80vh;
+  padding: 2rem 0;
 }
 
 .certifications .quote {
@@ -677,6 +678,7 @@ header .navbar ul li a:hover {
   overflow: hidden;
   transition: 0.3s;
   background: rgb(252, 252, 252);
+  padding: 1rem; /* Boşlukları azaltalım */
 }
 
 .certifications .box-container .box:hover {
@@ -729,31 +731,131 @@ header .navbar ul li a:hover {
   font-weight: 700;
 }
 
-/* Certifications Media Queries */
-@media screen and (max-width: 600px) {
+/* Download Button Styling */
+.downloadbtn {
+  position: absolute;
+  bottom: 20px; /* Daha yukarıya taşıdık */
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+}
+
+.downloadbtn .btn {
+  padding: 0.8rem 2rem;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.downloadbtn .btn:hover {
+  background-color: #45a049;
+  text-decoration: none;
+}
+
+.downloadbtn .btn i {
+  margin-left: 0.5rem;
+}
+
+/* Media Queries */
+
+/* Tablet ve daha büyük cihazlar için */
+@media screen and (max-width: 768px) {
   .certifications .box-container .box {
     flex-direction: column;
-    width: 100%;
+    width: 90%;
   }
 
   .certifications .box-container .box .image {
     width: 100%;
-    height: 25rem;
+    height: 20rem; /* Daha küçük resim boyutu */
   }
 
   .certifications .box-container .box img {
     width: 100%;
+    height: 100%;
   }
 
   .certifications .box-container .box .content {
-    position: relative;
+    flex: 0;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    flex-wrap: wrap;
-    flex: 0;
+    align-items: flex-start;
+  }
+
+  .certifications .box-container .box .content h3 {
+    font-size: 1.8rem;
+    margin-left: 0.5rem;
+  }
+
+  .certifications .box-container .box .content p {
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+  }
+
+  .certifications .box-container .box .content h4 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+
+  /* Download butonunu mobilde ortalayacağız */
+  .downloadbtn {
+    position: relative;
+    margin-top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
+
+/* Mobil ekranlar için */
+@media screen and (max-width: 480px) {
+  .certifications .quote {
+    font-size: 1.2rem;
+  }
+
+  .certifications .box-container .box .content h3 {
+    font-size: 1.5rem;
+  }
+
+  .certifications .box-container .box .content p {
+    font-size: 1.2rem;
+  }
+
+  .certifications .box-container .box .content h4 {
+    font-size: 1.3rem;
+  }
+
+  /* Download butonunu mobilde ortalayacağız */
+  .downloadbtn {
+    position: relative;
+    margin-top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Mobilde içerik kutusunu biraz daha daraltalım */
+  .certifications .box-container .box {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .certifications .box-container .box .content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .certifications .box-container .box .image {
+    width: 100%;
+    height: auto; /* Mobilde daha iyi görünmesi için */
+  }
+}
+
 
 
 /* CERTİFİCATİONS ENDS  */
